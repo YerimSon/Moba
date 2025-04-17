@@ -1,5 +1,5 @@
 import { collection, getDocs } from "firebase/firestore";
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import Link from 'next/link';
 import { db } from "../firebase";
 
@@ -25,7 +25,7 @@ const Myrecord = ({ user }: MyrecordProps) => {
     const [record, setRecord] = useState<Webtoon[]>([]);
     const dates: string[] = ['전체', '월', '화', '수', '목', '금', '토', '일', '완결', '휴재'];
 
-    const getWebtoons = async () => {
+    const getWebtoons = useCallback(async () => {
         try {
             const currentUid = user?.uid;
             const querySnapshot = await getDocs(collection(db, "webtoons"));
@@ -37,13 +37,13 @@ const Myrecord = ({ user }: MyrecordProps) => {
         } catch (err) {
             console.error(err instanceof Error && err.message);
         }
-    } 
+    }, [user?.uid]);
 
     console.log(record);
 
     useEffect(() => {
         getWebtoons();
-    }, []);
+    }, [getWebtoons]);
 
     return (
         <div className='record-page'>

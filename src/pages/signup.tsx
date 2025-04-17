@@ -1,4 +1,4 @@
-import GuestOnlyRoute from "../components/routes/GuestOnlyRoute";
+import GuestOnlyRoute from "../components/GuestOnlyRoute";
 import Signup from "../components/Signup";
 
 export default function SignupPage() {

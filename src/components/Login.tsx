@@ -2,6 +2,7 @@ import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 
 import { useRouter } from 'next/router';
 import { FormEvent } from 'react';
 import { auth } from '../firebase';
+import Image from 'next/image';
 
 interface LoginFormElements extends HTMLFormControlsCollection {
     email: HTMLInputElement;
@@ -61,12 +62,12 @@ function Login() {
                     </fieldset>
                     <button type='submit' className='regular-login'>로그인</button>
                     <button type='button' onClick={handleGoogleLogin} className='google-login'>
-                        <img src='/google_icon.png' alt="google icon"/>
-                        구글 로그인
+                        <Image src='/google_icon.png' alt="google icon" width={24} height={24} />
+                        구글 로그인 
                     </button>
                 </form>
             </div>
-        </section>
+        </section> 
     );
 }
 

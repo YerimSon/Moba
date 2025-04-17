@@ -1,5 +1,5 @@
 import Login from "../components/Login";
-import GuestOnlyRoute from "../components/routes/GuestOnlyRoute";
+import GuestOnlyRoute from "../components/GuestOnlyRoute";
 
 
 export default function LoginPage() {

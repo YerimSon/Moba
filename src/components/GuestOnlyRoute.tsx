@@ -1,7 +1,6 @@
-import { useAuth } from "@/src/context/AuthContext";
+import React, { useEffect } from "react";
+import { useAuth } from "../context/AuthContext";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
-
 
 const GuestOnlyRoute = ({ children }: { children: React.ReactNode }) => {
     const user = useAuth();
@@ -11,9 +10,10 @@ const GuestOnlyRoute = ({ children }: { children: React.ReactNode }) => {
         if (user) {
             router.push("/");
         }
-    }, [user]);
+    }, [user, router]);
 
     return <>{children}</>;
-}
+};
 
 export default GuestOnlyRoute;
+export {};

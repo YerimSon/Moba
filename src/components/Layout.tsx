@@ -6,6 +6,14 @@ import { useAuth } from '../context/AuthContext';
 export default function Layout({ Component, pageProps }: AppProps) {
   const user = useAuth();
 
+  if (user === undefined) {
+    return (
+      <div>
+        Loading...
+      </div>
+    )
+  }
+
   return (
     <>
       <Header user={user} />
@@ -13,3 +21,4 @@ export default function Layout({ Component, pageProps }: AppProps) {
     </>
   );
 }
+ 
