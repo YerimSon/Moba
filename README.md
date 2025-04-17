@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Moba - 웹툰 기록 관리 앱
 
-## Getting Started
+https://moba-record.vercel.app/
 
-First, run the development server:
 
+
+Moba는 웹툰 독자들을 위한 기록 관리 웹 애플리케이션입니다. 자신이 읽은 웹툰의 진행 상황을 쉽게 기록하고 관리할 수 있습니다.
+
+
+## 주요 기능
+
+- 웹툰 기록 추가/수정/삭제
+- 플랫폼별 웹툰 관리 (네이버, 카카오페이지, 레진 코믹스 등)
+- 에피소드 진행 상황 기록
+- 완결 여부 표시
+- 요일별 연재 정보 관리
+
+## 기술 스택
+
+- Frontend: React.js
+- Backend: Firebase
+- Authentication: Firebase Authentication
+- Database: Firestore
+- Styling: CSS
+
+## 설치 및 실행 방법
+
+1. 저장소 클론
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/YerimSon/moba.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. 의존성 설치
+```bash
+cd moba
+yarn install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. 개발 서버 실행
+```bash
+yarn start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 사용 방법
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. 회원가입 또는 로그인
+2. '새 기록' 버튼을 클릭하여 웹툰 정보 입력
+   - 제목
+   - 플랫폼
+   - 현재까지 본 에피소드
+   - 완결 여부
+   - 연재 요일
+3. '내 기록'에서 등록한 웹툰 목록 확인 및 관리 
